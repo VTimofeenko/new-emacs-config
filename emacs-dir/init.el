@@ -10,9 +10,12 @@
              (setq backup-directory-alist '(("." . "~/.cache/emacs-custom/autosaves"))))
 
 (use-package evil
+             :init
+             (setq evil-want-keybinding nil)
              :config
              (evil-mode 1)
-             )
+             (evil-set-leader 'normal (kbd "SPC"))
+             (evil-set-leader 'normal (kbd "m")))
 
 (use-package which-key
              :config
