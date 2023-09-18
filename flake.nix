@@ -22,6 +22,7 @@
             default = emacsWithPackages (epkgs: with epkgs.melpaPackages; [
               modus-themes
               evil
+              evil-collection
               which-key
               helpful
             ]);

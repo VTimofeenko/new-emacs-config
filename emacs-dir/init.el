@@ -28,3 +28,9 @@
              (mkMapping "f" 'helpful-callable)
              (mkMapping "v" 'helpful-variable)
              (mkMapping "c" 'helpful-command))
+
+(use-package evil-collection
+             :after evil
+             :ensure t
+             :config
+             (evil-collection-init))
