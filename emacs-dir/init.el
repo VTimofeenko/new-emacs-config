@@ -16,8 +16,7 @@
 
 (use-package which-key
              :config
-             (which-key-mode 1)
-             )
+             (which-key-mode 1))
 
 (use-package helpful
              :config
