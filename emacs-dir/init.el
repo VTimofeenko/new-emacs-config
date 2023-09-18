@@ -6,7 +6,8 @@
              ;:config
              (blink-cursor-mode 0)
              (global-display-line-numbers-mode 1)
-             (setq display-line-numbers-type 'visual))
+             (setq display-line-numbers-type 'visual)
+             (setq backup-directory-alist '(("." . "~/.cache/emacs-custom/autosaves"))))
 
 (use-package evil
              :config
