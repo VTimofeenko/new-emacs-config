@@ -33,6 +33,16 @@
 
 (relocate-custom-file)
 
+(defun relocate-eln-cache ()
+  "Move the eln cache to ~/.cache"
+  ;; Remove the original eln-cache.
+  (setq native-comp-eln-load-path (cdr native-comp-eln-load-path))
+  ;; Add the new eln-cache.
+  (push (expand-file-name (file-name-as-directory (file-truename "~/.cache/emacs-custom/eln-cache")) user-emacs-directory) native-comp-eln-load-path))
+
+(startup-redirect-eln-cache (file-truename "~/.cache/emacs-custom/eln-cache"))
+
+
 ;; Faster to disable these here (before they've been initialized)
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
