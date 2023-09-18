@@ -18,3 +18,11 @@
              :config
              (which-key-mode 1)
              )
+
+(use-package helpful
+             :config
+             (defun mkMapping(key callable)
+               (evil-define-key 'normal 'global (kbd (concat "<leader>h" key)) callable))
+             (mkMapping "f" 'helpful-callable)
+             (mkMapping "v" 'helpful-variable)
+             (mkMapping "c" 'helpful-command))

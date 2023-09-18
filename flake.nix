@@ -23,6 +23,7 @@
               modus-themes
               evil
               which-key
+              helpful
             ]);
           };
       };
