@@ -7,7 +7,8 @@
              (blink-cursor-mode 0)
              (global-display-line-numbers-mode 1)
              (setq display-line-numbers-type 'visual)
-             (setq backup-directory-alist '(("." . "~/.cache/emacs-custom/autosaves"))))
+             (setq backup-directory-alist '(("." . "~/.cache/emacs-custom/autosaves")))
+             (setq auto-save-file-name-transforms `((".*" "~/.cache/emacs-custom/emacs-saves/" t))))
 
 (use-package evil
              :init
