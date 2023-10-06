@@ -21,27 +21,15 @@
 (setq gc-cons-threshold 1073741824
       gc-cons-percentage 0.6)
 
-;; Write any customizations to a temp file so they are discarded.
-;; Move custom file into ~/.cache/emacs-custom
-(defun relocate-custom-file ()
-  "Move the custom file to a subdirectory inside ~/.cache and load it."
-  (let ((cache-dir (expand-file-name "emacs-custom" (file-truename "~/.cache"))))
-    (make-directory cache-dir t)
-    (setq custom-file (expand-file-name "custom.el" cache-dir))
-    (when (file-exists-p custom-file)
-      (load custom-file))))
+;; No-littering setup
+(let ((my-user-emacs-directory (expand-file-name "emacs-custom" (file-truename "~/.cache"))))
+  (make-directory my-user-emacs-directory t)
+  (setq user-emacs-directory my-user-emacs-directory))
 
-(relocate-custom-file)
-
-(defun relocate-eln-cache ()
-  "Move the eln cache to ~/.cache"
-  ;; Remove the original eln-cache.
-  (setq native-comp-eln-load-path (cdr native-comp-eln-load-path))
-  ;; Add the new eln-cache.
-  (push (expand-file-name (file-name-as-directory (file-truename "~/.cache/emacs-custom/eln-cache")) user-emacs-directory) native-comp-eln-load-path))
-
-(startup-redirect-eln-cache (file-truename "~/.cache/emacs-custom/eln-cache"))
-
+(when (fboundp 'startup-redirect-eln-cache)
+  (startup-redirect-eln-cache
+   (convert-standard-filename
+    (expand-file-name  "var/eln-cache/" user-emacs-directory))))
 
 ;; Faster to disable these here (before they've been initialized)
 (push '(menu-bar-lines . 0) default-frame-alist)

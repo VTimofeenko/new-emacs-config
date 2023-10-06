@@ -1,5 +1,15 @@
 (load-theme 'modus-vivendi-tinted :no-confirm)
 
+;; Prevents random files appearing in random places
+;; Since Nix store is read-only, the emacs directory is not writable
+(use-package no-littering
+             :init
+             ;; Kinda makes sense to set here to prevent lock files from appearing next to files that are being edited
+             (setq create-lockfiles nil)
+             :config
+             ;; Saves backups to files into var directory inside user-emacs-directory
+             (no-littering-theme-backups))
+
 (use-package emacs
              :init
              (setq inhibit-startup-screen t)
@@ -7,9 +17,7 @@
              (blink-cursor-mode 0)
              (global-display-line-numbers-mode 1)
              (setq display-line-numbers-type 'visual)
-             (setq backup-directory-alist '(("." . "~/.cache/emacs-custom/autosaves")))
-             (setq ring-bell-function 'ignore)
-             (setq auto-save-file-name-transforms `((".*" "~/.cache/emacs-custom/emacs-saves/" t))))
+             (setq ring-bell-function 'ignore))
 
 (use-package evil
              :init
@@ -40,8 +48,6 @@
 
 (use-package projectile
              :init
-             (setq projectile-cache-file "~/.cache/emacs-custom/projectile.cache"
-                   projectile-known-projects-file "~/.cache/emacs-custom/projectile-known-projects.eld")
              :after evil
              :ensure t
              :config
