@@ -27,6 +27,9 @@
               helpful
               projectile
               no-littering
+              helm
+              helm-projectile
+              helm-rg
             ]);
           };
       };

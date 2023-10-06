@@ -61,3 +61,11 @@
 (use-package savehist
              :init
              (savehist-mode 1))
+
+(use-package helm
+             :init
+             (helm-mode 1))
+
+(use-package helm-projectile
+             :init
+             (helm-projectile-on))
