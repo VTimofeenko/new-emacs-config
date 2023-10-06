@@ -14,6 +14,7 @@
 (use-package evil
              :init
              (setq evil-want-keybinding nil)
+             (setq evil-want-C-u-scroll t)
              :config
              (evil-mode 1)
              (evil-set-leader 'normal (kbd "SPC"))
