@@ -44,14 +44,12 @@
 
 (use-package evil-collection
              :after evil
-             :ensure t
              :config
              (evil-collection-init))
 
 (use-package projectile
              :init
              :after evil
-             :ensure t
              :config
              (projectile-mode 1)
              (evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-command-map)
