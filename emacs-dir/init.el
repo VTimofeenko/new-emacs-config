@@ -55,3 +55,9 @@
              (evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-command-map)
              (evil-define-key 'normal 'global (kbd "<leader><SPC>") 'projectile-find-file)
              (evil-define-key 'normal 'global (kbd "<leader>/") 'projectile-ripgrep))
+
+
+;; Persist history through Emacs restarts
+(use-package savehist
+             :init
+             (savehist-mode 1))
