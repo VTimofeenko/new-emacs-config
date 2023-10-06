@@ -26,6 +26,7 @@
               which-key
               helpful
               projectile
+              no-littering
             ]);
           };
       };
