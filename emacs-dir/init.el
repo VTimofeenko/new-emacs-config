@@ -13,7 +13,6 @@
 (use-package emacs
              :init
              (setq inhibit-startup-screen t)
-             ;:config
              (blink-cursor-mode 0)
              (global-display-line-numbers-mode 1)
              (setq display-line-numbers-type 'visual)
