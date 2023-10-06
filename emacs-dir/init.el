@@ -34,6 +34,7 @@
              (which-key-mode 1))
 
 (use-package helpful
+             :after evil
              :config
              (defun mkMapping(key callable)
                (evil-define-key 'normal 'global (kbd (concat "<leader>h" key)) callable))
