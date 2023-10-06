@@ -36,3 +36,15 @@
              :ensure t
              :config
              (evil-collection-init))
+
+(use-package projectile
+             :init
+             (setq projectile-cache-file "~/.cache/emacs-custom/projectile.cache"
+                   projectile-known-projects-file "~/.cache/emacs-custom/projectile-known-projects.eld")
+             :after evil
+             :ensure t
+             :config
+             (projectile-mode 1)
+             (evil-define-key 'normal 'global (kbd "<leader>p") 'projectile-command-map)
+             (evil-define-key 'normal 'global (kbd "<leader><SPC>") 'projectile-find-file)
+             (evil-define-key 'normal 'global (kbd "<leader>/") 'projectile-ripgrep))

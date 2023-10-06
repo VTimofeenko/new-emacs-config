@@ -25,6 +25,7 @@
               evil-collection
               which-key
               helpful
+              projectile
             ]);
           };
       };
