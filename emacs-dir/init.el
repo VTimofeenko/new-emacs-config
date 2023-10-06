@@ -24,8 +24,10 @@
              (setq evil-want-C-u-scroll t)
              :config
              (evil-mode 1)
+             ;; Leader
              (evil-set-leader 'normal (kbd "SPC"))
-             (evil-set-leader 'normal (kbd "m")))
+             ;; Local leader
+             (evil-set-leader 'normal (kbd "m") t))
 
 (use-package which-key
              :config
