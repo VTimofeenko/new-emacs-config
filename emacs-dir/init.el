@@ -129,7 +129,8 @@
 
 (use-package helm
              :init
-             :bind (:map evil-buffer-map
+             :bind (("M-x" . helm-M-x)
+                    :map evil-buffer-map
                          ("b" . switch-to-buffer)
                          :map evil-file-map
                          ("f" . find-file))
