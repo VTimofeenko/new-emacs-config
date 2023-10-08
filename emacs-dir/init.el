@@ -131,12 +131,34 @@
              :init
              :bind (("M-x" . helm-M-x)
                     :map evil-buffer-map
-                         ("b" . switch-to-buffer)
-                         :map evil-file-map
-                         ("f" . find-file))
+                    ("b" . switch-to-buffer)
+                    :map evil-file-map
+                    ("f" . find-file))
              :config
              (helm-mode 1))
 
 (use-package helm-projectile
              :init
              (helm-projectile-on))
+
+(use-package evil-org
+             :after org
+             :hook (org-mode . evil-org-mode)
+             :config
+             (require 'evil-org-agenda)
+             (evil-org-agenda-set-keys)
+             (evil-org-set-key-theme '(navigation insert textobjects additional calendar)))
+
+(use-package org-superstar
+             :after org
+             :init
+             (setq org-hide-leading-stars nil) ;; needed explicitly
+             :hook (org-mode . org-superstar-mode)
+             :config
+             (setq org-superstar-remove-leading-stars t))
+
+(use-package org-fancy-priorities
+             :after org
+             :hook (org-mode . org-fancy-priorities-mode)
+             :config
+             (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕"))) ;; TODO
