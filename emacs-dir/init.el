@@ -12,6 +12,7 @@
 
 (use-package emacs
              :init
+	     (setq scroll-margin 5)
              (setq inhibit-startup-screen t)
              (blink-cursor-mode 0)
              (global-display-line-numbers-mode 1)
