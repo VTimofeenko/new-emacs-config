@@ -30,6 +30,7 @@
               helm
               helm-projectile
               helm-rg
+              evil-surround
             ]);
           };
       };

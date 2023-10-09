@@ -163,3 +163,7 @@
              :hook (org-mode . org-fancy-priorities-mode)
              :config
 	     (setq org-fancy-priorities-list '("↑" "←" "↓")))
+
+(use-package evil-surround
+  :config
+  (global-evil-surround-mode 1))
