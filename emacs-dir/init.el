@@ -162,4 +162,4 @@
              :after org
              :hook (org-mode . org-fancy-priorities-mode)
              :config
-             (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕"))) ;; TODO
+	     (setq org-fancy-priorities-list '("↑" "←" "↓")))
