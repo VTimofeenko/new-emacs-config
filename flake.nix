@@ -30,6 +30,9 @@
               helm
               helm-projectile
               helm-rg
+              evil-org
+              org-superstar
+              org-fancy-priorities
               evil-surround
             ]);
           };
